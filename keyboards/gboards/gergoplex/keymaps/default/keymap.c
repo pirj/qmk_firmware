@@ -28,11 +28,19 @@ enum {
     _NUMBERS  // numbers/function/motion
 };
 
+// Alpha Mods
 #define KC_CTL_A  MT(MOD_LCTL, KC_A)     // Tap for A, hold for Control
-#define KC_CTL_CL MT(MOD_LCTL, KC_SCLN)  // Tap for colon, hold for Control
-#define KC_SFT_Z  MT(MOD_RSFT, KC_Z)     // Tap for Z, hold for Shift
+#define KC_CTL_CL MT(MOD_RCTL, KC_SCLN)  // Tap for colon, hold for Control
+#define KC_SFT_Z  MT(MOD_LSFT, KC_Z)     // Tap for Z, hold for Shift
 #define KC_SFT_SL MT(MOD_RSFT, KC_SLSH)  // Tap for slash, hold for Shift
 
+// Special Mods
+#define KC_CTL_HS MT(MOD_LCTL, KC_HASH)  // Tap for hash, hold for Control
+#define KC_CTL_QT MT(MOD_RCTL, KC_QUOT)  // Tap for single quote, hold for Control
+#define KC_SFT_PR MT(MOD_LSFT, KC_PERC)  // Tap for percent, hold for Shift
+#define KC_SFT_MN MT(MOD_RSFT, KC_MINS)  // Tap for dash, hold for Shift
+
+// Thumbs
 #define KC_GUI_ESC MT(MOD_LGUI, KC_ESC)  // Tap for Esc, hold for GUI (Meta, Command, Win)
 #define KC_ALT_ENT MT(MOD_LALT, KC_ENT)  // Tap for Enter, hold for Alt (Option)
 #define KC_SPE_SPC LT(_SPECIAL, KC_SPC)  // Tap for Space, hold for Special layer
@@ -87,10 +95,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *     '-------------------------'          '-----------------'
      */
     [_SPECIAL] = LAYOUT_split_3x5_3(
-         KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_PIPE,          KC_GRV,  KC_TILD, KC_TRNS, KC_TRNS, KC_BSLS,
-         KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_BTN2,          KC_PLUS, KC_MINS, KC_SLSH, KC_ASTR, KC_QUOT,
-         KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_BTN1,          KC_AMPR, KC_EQL,  KC_COMM, KC_DOT,  KC_MINS,
-                            CMB_TOG, KC_SCLN, KC_EQL,          KC_EQL, KC_SCLN, KC_DEL),
+         KC_EXLM,   KC_AT,   KC_LCBR, KC_RCBR, KC_PIPE,          KC_GRV,  KC_TILD, KC_TRNS, KC_TRNS, KC_BSLS,
+         KC_CTL_HS, KC_DLR,  KC_LPRN, KC_RPRN, KC_BTN2,          KC_PLUS, KC_MINS, KC_SLSH, KC_ASTR, KC_CTL_QT,
+         KC_SFT_PR, KC_CIRC, KC_LBRC, KC_RBRC, KC_BTN1,          KC_AMPR, KC_EQL,  KC_COMM, KC_DOT,  KC_SFT_MN,
+                             CMB_TOG, KC_SCLN, KC_EQL,           KC_EQL,  KC_SCLN, KC_DEL),
 
     /* Keymap 2: Numbers/Function/Motion layer
      *
